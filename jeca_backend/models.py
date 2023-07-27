@@ -32,7 +32,7 @@ class Job(models.Model):
     def __str__(self):
         return self.title
 
-class CoverLetter(models.Model):
+class Cover_Letter(models.Model):
     job = models.ForeignKey(Job, on_delete=models.CASCADE)
     content = models.TextField()
 

@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from jeca_backend import views
+
+# router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('jobs/', views.job_list),
+    path('companies/', views.company_list),
+    path('resumes/', views.resume_list),
+    path('coverletters/', views.cover_letter_list)
 ]
