@@ -15,14 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from jeca_backend import views
+from rest_framework import routers
 
 # router
+router = routers.DefaultRouter()
+router.register(r'jobs', views.JobViewSet)
+
+
 
 urlpatterns = [
+    path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
-    path('jobs/', views.job_list),
+    # path('jobs/', views.job_list),
     path('companies/', views.company_list),
     path('resumes/', views.resume_list),
     path('coverletters/', views.cover_letter_list)

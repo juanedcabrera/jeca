@@ -15,7 +15,7 @@ class GroupSerializer(serializers.ModelSerializer):
 class JobSerializer(serializers.ModelSerializer):
     class Meta:
         model = Job
-        fields = ('title', 'company', 'status', 'choices', 'application_date', 'post_date', 'job_description', 'job_url', 'feedback_tracker')
+        fields = ('title', 'company', 'status', 'application_date', 'post_date', 'job_description', 'job_url', 'feedback_tracker')
 
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
